@@ -1,0 +1,42 @@
+$editColor: #dc3545;
+$deleteColor: #ffc107;
+$addColor: #0dcaf0;
+$hoverColor: #fff;
+
+@mixin colorTransition() {
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.home {
+    .btn.add {
+        color: $addColor;
+        border: 1px solid $addColor;
+        box-shadow: 4px 4px 7px rgba(0, 0, 0, 9);
+        @include colorTransition();
+        &:hover {
+            color: $hoverColor;
+            background-color: $addColor;
+        }
+    }
+    .note{
+        .fa-edit{
+            @include colorTransition();
+            &:hover{
+                color: $editColor;
+            }
+        }
+        .fa-trash-alt{
+            @include colorTransition();
+            &:hover{
+                color: $deleteColor;
+            }
+        }
+        .clearfix{
+            clear: both;
+        }
+    }
+}
